@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Model 3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+  <style>
+    input.ng-invalid {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body data-ng-app="myApp">
+  <!-- Two way data binding -->
+  <form name = "myForm" data-ng-controller="myCtrl">
+    Address: <input type="text" data-ng-model="myAddress" required>
+    {{myAddress}}
+
+  </form>
+  <script src="myApp.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    app.controller("myCtrl", function($scope) {
+      $scope.myAddress = "John@gmail.com";
+    });
+  </script>
+</body>
+</html>

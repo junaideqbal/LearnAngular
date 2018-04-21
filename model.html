@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modules</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+</head>
+<body data-ng-app="myApp">
+  <div data-ng-controller="myCtrl">
+    <input type="text" data-ng-model="name">
+    <h5>You entered: {{name}}</h5>
+  </div>
+  <form name = "myForm" data-ng-controller="myCtrl2">
+    <input type="email" name="myAddress" data-ng-model="text">
+    <!-- Validating input and show msg on runtime -->
+    <span  data-ng-show="myForm.myAddress.$error.email" >Not a valid email address</span>
+  </form>
+  <script src="myApp.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    app.controller("myCtrl", function($scope) {
+      $scope.name = "John";
+    });
+    app.controller("myCtrl2", function($scope) {
+      $scope.name = "Junaid";
+    });
+  </script>
+</body>
+</html>

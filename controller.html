@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Controller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+</head>
+<body data-ng-app="myApp">
+  <form name = "myForm" data-ng-controller="myCtrl">
+    <h1 data-ng-click="changeName()"> {{firstName}}</h1>
+
+  </form>
+  <script src="myApp.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    app.controller("myCtrl", function($scope) {
+      $scope.firstName = "John";
+      $scope.changeName = function() {
+        $scope.firstName = "Nelly";
+      }
+    });
+  </script>
+</body>
+</html>

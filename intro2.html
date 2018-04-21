@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Application Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+  <div data-ng-app="myApp" data-ng-controller="myCtrl">
+    FirstName: <input type="text" data-ng-model="firstName"><br>
+    LastName: <input type="text" data-ng-model="lastName"><br>
+    <br>
+    {{firstName + " " + lastName}}
+
+    <span data-ng-bind="firstName">
+
+  </div>
+
+  <script>
+  //AngularJS modules define applications:
+    var app = angular.module('myApp', []);
+  //AngularJS controllers control applications:
+    app.controller('myCtrl', function($scope) {
+      $scope.firstName="Junaid";
+      $scope.lastName="Iqbal";
+    });
+  </script>
+</body>
+</html>

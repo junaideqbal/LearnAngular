@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directives</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <!-- Creating new directive -->
+  <div data-ng-app="myApp">
+    <w3-test-directive>
+
+    </w3-test-directive>
+    <second></second>
+    <!-- As Attribute -->
+    <div second></div>
+    <!-- As Class -->
+    <div class="second"></div>
+    <!-- directive: second -->
+  </div>
+  <script src="myApp.js" charset="utf-8"></script>
+  <script>
+    app.directive("w3TestDirective", function(){
+      return {
+        template: "<h1> Made it by Directives</h1>"
+      }
+    });
+    //     The legal restrict values are:
+    //
+    //     E for Element name
+    //     A for Attribute
+    //     C for Class
+    //     M for Comment
+    //
+    //     By default the value is EA, meaning that both Element names and   attribute names can invoke the directive.
+    app.directive("second", function() {
+      return {
+        restrict : "AM",
+        replace : true,
+        template : "<h1>Second Directive</h1>"
+      }
+    });
+  </script>
+</body>
+</html>
